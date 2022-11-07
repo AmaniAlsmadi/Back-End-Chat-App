@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  background-color: rgb(233,236,239);
+  border: 1px solid rgb(176, 197, 206);
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  position: relative;
+}
+
+.button {
+  background-color: rgb(176, 197, 206);
+  border: 1px solid rgb(176, 197, 206);
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.button:hover {
+  background-color: rgb(117, 153, 168);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid rgb(176, 197, 206);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  font-size: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
