@@ -36,3 +36,18 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.deleteButton{
+  background-color: rgb(176, 197, 206و 0.1);
+  border: 0 none;
+  cursor: pointer;
+  font-size: small;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 30px  ;
+}
+.chatDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+   
+}
