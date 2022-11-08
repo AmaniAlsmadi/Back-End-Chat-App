@@ -23,27 +23,33 @@ const io = socketIO(server, {
     }
 })
 
-app.get('/', async (req, res) => {
+
+app.get('/', (req, res) => {
+    res.send('Hello World')
+  })
+
+app.get('/user', async (req, res) => {
     try {
         const users = await user.find();
+        io.emit('users added')
         res.status(200).json(users);
 
     } catch (error) {
         res.send(error.message);
     }
 });
-app.post('/', async (req, res) => {
+app.post('/user', async (req, res) => {
     try {
         const newUser = new user(req.body);
         await newUser.save();
         const users = await user.find();
-        io.emit('users added', users);
+        io.emit('users added');
         res.status(200).json(newUser);
     } catch (error) {
         res.send(error.message);
     }
 });
-app.delete('/:id', async (req, res) => {
+app.delete('/user/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const deletedUser = await user.findByIdAndDelete(id);
@@ -66,7 +72,7 @@ io.on('connection', (socket) => {
     });
 });
 
-app.listen(PORT, () =>
+server.listen(PORT, () =>
     console.log(`Listening on port: ${PORT}`));
 
 // Connect to MongoDB
